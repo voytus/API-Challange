@@ -1,5 +1,7 @@
 package com.qa.api.domain;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -75,6 +77,25 @@ public class Fishes {
 
 	public void setFishNickname(String fishNickname) {
 		this.fishNickname = fishNickname;
+	}
+
+	// HashCode and equals
+	@Override
+	public int hashCode() {
+		return Objects.hash(fishName, fishNickname, fishSpieces, id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Fishes other = (Fishes) obj;
+		return Objects.equals(fishName, other.fishName) && Objects.equals(fishNickname, other.fishNickname)
+				&& Objects.equals(fishSpieces, other.fishSpieces) && id == other.id;
 	}
 
 }
