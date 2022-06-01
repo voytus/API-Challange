@@ -22,9 +22,28 @@ public class Fishes {
 	@Column(nullable = false)
 	private String fishNickname;
 
-	// Empty constructor
+	// Default - empty constructor
 	public Fishes() {
 	}
+
+	// create constructor to read from a database
+	public Fishes(long id, String fishName, String fishSpieces, String fishNickname) {
+		super();
+		this.id = id;
+		this.fishName = fishName;
+		this.fishSpieces = fishSpieces;
+		this.fishNickname = fishNickname;
+	}
+
+	// create constructor to write(insert) into a database
+	public Fishes(String fishName, String fishSpieces, String fishNickname) {
+		super();
+		this.fishName = fishName;
+		this.fishSpieces = fishSpieces;
+		this.fishNickname = fishNickname;
+	}
+
+	// Getters and setters
 
 	public long getId() {
 		return id;
