@@ -1,3 +1,6 @@
+//!!!!!!!!!!!!!!!!!!WRONG species 
+
+
 package com.qa.api.domain;
 
 import java.util.Objects;
@@ -19,7 +22,7 @@ public class Fishes {
 	private String fishName;
 
 	@Column(nullable = false)
-	private String fishSpieces;
+	private String fishSpecies;
 
 	@Column(nullable = false)
 	private String fishNickname;
@@ -29,19 +32,19 @@ public class Fishes {
 	}
 
 	// create constructor to read from a database
-	public Fishes(long id, String fishName, String fishSpieces, String fishNickname) {
+	public Fishes(long id, String fishName, String fishSpecies, String fishNickname) {
 		super();
 		this.id = id;
 		this.fishName = fishName;
-		this.fishSpieces = fishSpieces;
+		this.fishSpecies = fishSpecies;
 		this.fishNickname = fishNickname;
 	}
 
 	// create constructor to write(insert) into a database
-	public Fishes(String fishName, String fishSpieces, String fishNickname) {
+	public Fishes(String fishName, String fishSpecies, String fishNickname) {
 		super();
 		this.fishName = fishName;
-		this.fishSpieces = fishSpieces;
+		this.fishSpecies = fishSpecies;
 		this.fishNickname = fishNickname;
 	}
 
@@ -63,12 +66,12 @@ public class Fishes {
 		this.fishName = fishName;
 	}
 
-	public String getFishSpieces() {
-		return fishSpieces;
+	public String getFishSpecies() {
+		return fishSpecies;
 	}
 
-	public void setFishSpieces(String fishSpieces) {
-		this.fishSpieces = fishSpieces;
+	public void setFishSpecies(String fishSpecies) {
+		this.fishSpecies = fishSpecies;
 	}
 
 	public String getFishNickname() {
@@ -82,7 +85,7 @@ public class Fishes {
 	// HashCode and equals
 	@Override
 	public int hashCode() {
-		return Objects.hash(fishName, fishNickname, fishSpieces, id);
+		return Objects.hash(fishName, fishNickname, fishSpecies, id);
 	}
 
 	@Override
@@ -95,7 +98,7 @@ public class Fishes {
 			return false;
 		Fishes other = (Fishes) obj;
 		return Objects.equals(fishName, other.fishName) && Objects.equals(fishNickname, other.fishNickname)
-				&& Objects.equals(fishSpieces, other.fishSpieces) && id == other.id;
+				&& Objects.equals(fishSpecies, other.fishSpecies) && id == other.id;
 	}
 
 }
