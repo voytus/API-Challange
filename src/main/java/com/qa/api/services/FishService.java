@@ -1,5 +1,11 @@
 package com.qa.api.services;
 
-public class FishService {
+import com.qa.api.repo.FishRepo;
 
+public class FishService {
+	private FishRepo repo;
+
+	public FishService(FishRepo repo) {
+		this.repo = repo;
+	}
 }
