@@ -1,5 +1,9 @@
 package com.qa.api.repo;
 
-public class FishRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.qa.api.domain.Fishes;
+
+public interface FishRepo extends JpaRepository<Fishes, Long> {
 
 }
