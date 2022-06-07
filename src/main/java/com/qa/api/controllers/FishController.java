@@ -1,5 +1,8 @@
 package com.qa.api.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RestController;
 
 import com.qa.api.services.FishService;
@@ -12,4 +15,6 @@ public class FishController {
 	public FishController(FishService service) {
 		this.service = service;
 	}
+	
+	private List<Fish> fishes = new ArrayList<>();
 }
